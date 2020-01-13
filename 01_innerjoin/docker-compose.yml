@@ -1,0 +1,20 @@
+# The below is the same command.
+# $ docker run --rm -d
+#   -v ./init:/docker-entrypoint-initdb.d
+#   -e MYSQL_ROOT_PASSWORD=hoge
+#   -p 12345:3306 --name mysql mysql:5.7
+
+# Usage:
+# $ docker-compose up -d
+# $ docker-compose down
+
+version: '3'
+services:
+  mysql:  # これがdocker containerの名前の一部になる。具体的には"01_innerjoin_mysql_1"となる
+    image: mysql:5.7 
+    environment:
+      MYSQL_ROOT_PASSWORD: hoge
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+    ports:
+      - "12345:3306"
