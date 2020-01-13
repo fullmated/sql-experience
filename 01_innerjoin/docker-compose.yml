@@ -1,4 +1,4 @@
-# The below is the same command.
+# The same action can be taken by this command.
 # $ docker run --rm -d
 #   -v ./init:/docker-entrypoint-initdb.d
 #   -e MYSQL_ROOT_PASSWORD=hoge
